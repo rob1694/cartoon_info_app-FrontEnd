@@ -1,13 +1,19 @@
 import React from 'react'
 import CartoonShow from './CartoonShow';
 
- function CartoonContainer({ Dummyshow } ) {
+ function CartoonContainer({ Dummyshows } ) {
     
+    const cartoonShows = Dummyshows.map((show) => (
+        <CartoonShow
+          key = {show.id}
+          show = {show}
+        />
+      ));
     
     return (
         <div>
             <h2>THIS IS A CONTAINER!!!</h2>
-            <CartoonShow Dummyshow = {Dummyshow}/>
+            {cartoonShows}
         </div>
         
     )

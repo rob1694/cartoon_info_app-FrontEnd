@@ -1,8 +1,8 @@
 import React from 'react'
 
- function LikedCartoonContainer({ Dummyshow }) {
+ function LikedCartoonContainer({ Dummyshows }) {
     
-    const { name } = Dummyshow;
+    const { name } = Dummyshows;
     
     return (
         <div>

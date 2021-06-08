@@ -1,8 +1,8 @@
 import React from 'react'
 
-function CartoonShow( { Dummyshow }) {
+function CartoonShow( { show }) {
     
-    const { name, Description, Age_range, IMG, id } = Dummyshow;
+    const { name, Description, Age_range, IMG, id } = show;
     
     return (
         <div>
