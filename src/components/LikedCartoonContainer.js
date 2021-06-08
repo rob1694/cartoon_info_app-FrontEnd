@@ -1,8 +1,14 @@
 import React from 'react'
 
- function LikedCartoonContainer() {
+ function LikedCartoonContainer({ Dummyshow }) {
+    
+    const { name } = Dummyshow;
+    
     return (
-       <h2>LIKES!!!!</h2>
+        <div>
+            <h2>Liked SHOWS</h2>
+            <h3>- {name} </h3>
+        </div>
     )
 }
 

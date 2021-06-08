@@ -1,8 +1,17 @@
 import React from 'react'
 
 function CartoonForm() {
+    
+    
     return (
-        <h2>FORM!!!</h2>
+        <div>
+            <h2>FORM!!!</h2>
+            <input placeholder= "Name"></input>
+            <input placeholder= "Description"></input>
+            <input placeholder= "Age Range"></input>
+            <input placeholder= "Img"></input>
+            <button>Submit</button>
+        </div>
     )
 }
 
