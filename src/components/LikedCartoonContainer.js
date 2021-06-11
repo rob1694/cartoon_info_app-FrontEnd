@@ -1,13 +1,13 @@
 import React from 'react'
 
- function LikedCartoonContainer({ Dummyshows }) {
+ function LikedCartoonContainer({ cartoons }) {
     
-    const { name } = Dummyshows;
-    
+    const { Title } = cartoons;
+
     return (
         <div>
-            <h2>Liked SHOWS</h2>
-            <h3>- {name} </h3>
+            <h2>Favorites</h2>
+            <h3>- {Title} </h3>
         </div>
     )
 }

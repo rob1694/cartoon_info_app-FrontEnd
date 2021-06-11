@@ -1,17 +1,23 @@
 import React from 'react'
 
-function CartoonShow( { show }) {
+function CartoonShow( { deleteCartoon, show }) {
     
-    const { name, Description, Age_range, IMG, id } = show;
+    const { Title, Description, Age_range, Img, id } = show;
+
+    function handleDeleteCartoon() {
+        deleteCartoon(id)
+      }
     
     return (
         <div>
-            <h3>- Title: {name}</h3>
+            <h3>- Title: {Title}</h3>
             <p>- Description: {Description}</p>
             <h4>- Age Range: {Age_range} </h4>
-            <h3>- {IMG}</h3>
+            <div>
+                <img alt = {Title} src = {Img} /> 
+            </div>
             <button>LIKE/DISLIKE</button>
-            <button>DELETE</button>
+            <button onClick = {handleDeleteCartoon} > DELETE</button>
         </div>
     )
 }
