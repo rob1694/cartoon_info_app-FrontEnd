@@ -21,12 +21,16 @@ function MainPage() {
           setCartoons([...cartoons, Cartoon]);
         }
 
+        function removeCartoon(cartoon) {
+          setCartoons(cartoon)
+        }
+
     return (
         <div>
             <h1>Cartoon Information</h1>
             <CartoonForm onAddCartoon ={handleCartoonChange}/>
             <LikedCartoonContainer cartoons = {cartoons}/>
-            <CartoonContainer onDeleteCartoon = {handleCartoonChange} cartoons = {cartoons} url = {url}/>
+            <CartoonContainer onDeleteCartoon = {removeCartoon} cartoons = {cartoons} url = {url}/>
         </div>
 
     )
