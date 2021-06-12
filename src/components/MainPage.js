@@ -12,25 +12,43 @@ function MainPage() {
     useEffect(() => {
         fetch(url)
           .then((r) => r.json())
-          .then((cartoons) => {
-            setCartoons(cartoons);
+          .then((json) => {
+            const favShows = addToFavorites(json)
+            setCartoons(favShows);
           });
         }, []);
+
+        function addToFavorites (cartoons) {
+          return cartoons.map((show) => {
+            return {...show, favorited: false }
+          })
+        }
+
+        function filterFavorites(cartoons) {
+          return cartoons.filter((show) => show.favorited)
+        }
 
         function addCartoon(cartoon) {
           setCartoons([...cartoons, cartoon]);
         }
 
-        function removeCartoon(cartoon) {
+        function changeCartoon(cartoon) {
           setCartoons(cartoon)
         }
 
+        
     return (
         <div>
             <h1>Cartoon Information</h1>
             <CartoonForm onAddCartoon ={addCartoon}/>
-            <LikedCartoonContainer cartoons = {cartoons}/>
-            <CartoonContainer onDeleteCartoon = {removeCartoon} cartoons = {cartoons} url = {url}/>
+            <LikedCartoonContainer 
+              filterFavorites = {filterFavorites(cartoons)}
+            />
+            <CartoonContainer 
+              onChangeCartoon = {changeCartoon} 
+              cartoons = {cartoons} 
+              url = {url} 
+            />
         </div>
 
     )
