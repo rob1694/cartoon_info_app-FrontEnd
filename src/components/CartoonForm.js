@@ -4,27 +4,27 @@ import { useState } from 'react'
 function CartoonForm( { onAddCartoon } ) {
 
     const [formData, setFormData] = useState({ 
-        Title: "",
-        Description: "",
-        Age_range: "",
-        Img: "",
+        title: "",
+        description: "",
+        ageRange: "",
+        img: "",
       })
 
       function handleChange(e) {
         setFormData({
           ...formData,
           [e.target.name]: e.target.value
-        })
+        });
       }
     
       function handleSubmit(e) {
         e.preventDefault();
     
         const newCartoon = {
-          Title: formData.Title,
-          Description: formData.Description,
-          Age_range: formData.Age_range,
-          Img: formData.Img
+          title: formData.title,
+          description: formData.description,
+          ageRange: formData.ageRange,
+          img: formData.img
         }; 
     
         const url = `http://localhost:3001/cartoons`
@@ -43,10 +43,10 @@ function CartoonForm( { onAddCartoon } ) {
         <div>
             <h2>Add a Cartoon to Our List!</h2>
             <form onSubmit = {handleSubmit}>
-                <input placeholder= "Title" value = {formData.Title} onChange = {handleChange} />
-                <input placeholder= "Description" value = {formData.Description} onChange = {handleChange} />
-                <input placeholder= "Age Range" value = {formData.Age_range} onChange = {handleChange} />
-                <input placeholder= "Img-URL" value = {formData.Img} onChange = {handleChange} />
+                <input name = "title" placeholder= "Title" value = {formData.title} onChange = {handleChange} />
+                <input name = "description" placeholder= "Description" value = {formData.description} onChange = {handleChange} />
+                <input name = "ageRange" placeholder= "Age Range" value = {formData.ageRange} onChange = {handleChange} />
+                <input name = "img" placeholder= "Img URL" value = {formData.img} onChange = {handleChange} />
                 <button>Submit</button>
             </form>
         </div>

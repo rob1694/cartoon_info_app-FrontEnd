@@ -17,8 +17,8 @@ function MainPage() {
           });
         }, []);
 
-        function handleCartoonChange(Cartoon) {
-          setCartoons([...cartoons, Cartoon]);
+        function addCartoon(cartoon) {
+          setCartoons([...cartoons, cartoon]);
         }
 
         function removeCartoon(cartoon) {
@@ -28,7 +28,7 @@ function MainPage() {
     return (
         <div>
             <h1>Cartoon Information</h1>
-            <CartoonForm onAddCartoon ={handleCartoonChange}/>
+            <CartoonForm onAddCartoon ={addCartoon}/>
             <LikedCartoonContainer cartoons = {cartoons}/>
             <CartoonContainer onDeleteCartoon = {removeCartoon} cartoons = {cartoons} url = {url}/>
         </div>

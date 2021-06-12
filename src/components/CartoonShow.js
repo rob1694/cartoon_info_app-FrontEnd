@@ -2,7 +2,7 @@ import React from 'react'
 
 function CartoonShow( { deleteCartoon, show }) {
     
-    const { Title, Description, Age_range, Img, id } = show;
+    const { title, description, ageRange, img, id } = show;
 
     function handleDeleteCartoon() {
         deleteCartoon(id)
@@ -10,11 +10,11 @@ function CartoonShow( { deleteCartoon, show }) {
     
     return (
         <div>
-            <h3>- Title: {Title}</h3>
-            <p>- Description: {Description}</p>
-            <h4>- Age Range: {Age_range} </h4>
+            <h3>Title: {title}</h3>
+            <p>Description: {description}</p>
+            <h4>Age Range: {ageRange} </h4>
             <div>
-                <img alt = {Title} src = {Img} /> 
+                <img alt = {title} src = {img} /> 
             </div>
             <button>LIKE/DISLIKE</button>
             <button onClick = {handleDeleteCartoon} > DELETE</button>

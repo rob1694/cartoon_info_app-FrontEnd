@@ -1,13 +1,17 @@
 import React from 'react'
 
  function LikedCartoonContainer({ cartoons }) {
-    
-    const { Title } = cartoons;
 
+    const favorited = cartoons.map((show) => (
+        <h4>
+        - {show.title}
+        </h4>
+      ));
+    
     return (
         <div>
             <h2>Favorites</h2>
-            <h3>- {Title} </h3>
+            {favorited}
         </div>
     )
 }
