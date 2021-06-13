@@ -5,13 +5,13 @@ import React from 'react'
     function FavoritedShow() {
         return filterFavorites.map((show) => (
             <h4 key = {`${show.id}0`}>
-                - {show.title}
+                * {show.title}
             </h4>
       ));
     }
       
     return (
-        <div>
+        <div className = "container">
             <h2>Favorites</h2>
             {FavoritedShow()}
         </div>

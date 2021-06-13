@@ -4,7 +4,8 @@ import CartoonShow from './CartoonShow';
  function CartoonContainer(
          { onChangeCartoon, 
           url, 
-          cartoons
+          cartoons,
+          handleFavorite
           }) 
   {
 
@@ -43,6 +44,7 @@ import CartoonShow from './CartoonShow';
           show = {show}
           deleteCartoon = {deleteCartoon}
           counter = {patchCartoon}
+          handleFavorite = {handleFavorite}
         />
       ));
     
