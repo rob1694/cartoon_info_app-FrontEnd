@@ -1,4 +1,5 @@
 import React from 'react'
+import './MainPage.css'
 import CartoonContainer from './CartoonContainer';
 import CartoonForm from './CartoonForm';
 import LikedCartoonContainer from './LikedCartoonContainer';
@@ -38,17 +39,21 @@ function MainPage() {
 
         
     return (
-        <div>
-            <h1>Cartoon Information</h1>
-            <CartoonForm onAddCartoon ={addCartoon}/>
-            <LikedCartoonContainer 
-              filterFavorites = {filterFavorites(cartoons)}
-            />
-            <CartoonContainer 
+        <div className = "row">
+            <h1 className = "text-center">Cartoon Information</h1>
+            <div className = "col-md-9">
+              <CartoonContainer 
               onChangeCartoon = {changeCartoon} 
               cartoons = {cartoons} 
               url = {url} 
-            />
+              />
+            </div>
+            <div className = "col-sm-3">
+              <CartoonForm onAddCartoon ={addCartoon}/>
+            </div>
+            {/* <LikedCartoonContainer 
+              filterFavorites = {filterFavorites(cartoons)}
+            /> */}
         </div>
 
     )

@@ -8,8 +8,6 @@ import CartoonShow from './CartoonShow';
           }) 
   {
 
-    const [count, setCount] = React.useState(0)
-
   function deleteCartoon(cartoonId) {
     const newURL = `${url}/${cartoonId}`;
     const config = { method: "DELETE" };
@@ -49,7 +47,7 @@ import CartoonShow from './CartoonShow';
       ));
     
     return (
-        <div>
+        <div className = "container">
             {cartoonShows}
         </div>
         

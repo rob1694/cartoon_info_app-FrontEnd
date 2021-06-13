@@ -1,4 +1,5 @@
 import React from 'react'
+import './CartoonForm.css'
 import { useState } from 'react'
 
 function CartoonForm( { onAddCartoon } ) {
@@ -40,14 +41,22 @@ function CartoonForm( { onAddCartoon } ) {
       }
 
     return (
-        <div>
-            <h2>Add a Cartoon to Our List!</h2>
+        <div className = "container">
+            <h2 className = ""> Add a Cartoon to Our List!</h2>
             <form onSubmit = {handleSubmit}>
+              <div class="input-group mb-3">
                 <input name = "title" placeholder= "Title" value = {formData.title} onChange = {handleChange} />
+              </div>
+              <div class="input-group mb-3">
                 <input name = "description" placeholder= "Description" value = {formData.description} onChange = {handleChange} />
+              </div>
+              <div class="input-group mb-3">
                 <input name = "ageRange" placeholder= "Age Range" value = {formData.ageRange} onChange = {handleChange} />
+              </div>
+              <div class="input-group mb-3">
                 <input name = "img" placeholder= "Img URL" value = {formData.img} onChange = {handleChange} />
-                <button>Submit</button>
+              </div>
+                <button className = "btn btn-primary" >Submit</button>
             </form>
         </div>
     )

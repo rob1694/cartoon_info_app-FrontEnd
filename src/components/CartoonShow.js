@@ -1,4 +1,5 @@
 import React from 'react'
+import './CartoonShow.css'
 
 function CartoonShow( { deleteCartoon, show, counter }) {
     
@@ -16,16 +17,17 @@ function CartoonShow( { deleteCartoon, show, counter }) {
     }
 
     return (
-        <div>
-            <h3>Title: {title}</h3>
+        <div className = "text-center">
+            <h3 className = "card-header">{title}</h3>
             <p>Description: {description}</p>
-            <h4>Age Range: {ageRange} </h4>
+            <h5>Age Range: {ageRange} </h5>
             <div>
-                <img alt = {title} src = {img} /> 
+                <img className = "rounded mx-auto d-block" alt = {title} src = {img} /> 
             </div>
-            <p> <button onClick = {handleCount}> Like </button> : {likes} </p>
-            <button > FAVORITE </button>
-            <button onClick = {handleDeleteCartoon} > DELETE</button>
+            <p> <button className = "btn btn-success" onClick = {handleCount}> Like </button> : {likes} </p>
+            <button className = "btn btn-info" > FAVORITE </button>
+            <br></br>
+            <button className = "btn btn-danger" onClick = {handleDeleteCartoon} > DELETE</button>
         </div>
     )
 }
