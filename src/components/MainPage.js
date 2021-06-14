@@ -17,7 +17,7 @@ function MainPage() {
             const favShows = addToFavorites(json)
             setCartoons(favShows);
           });
-        }, []);
+        }, [url]);
 
         function addToFavorites (cartoons) {
           return cartoons.map((show) => {

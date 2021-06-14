@@ -12,21 +12,43 @@ function CartoonForm( { onAddCartoon } ) {
       })
 
       function handleChange(e) {
+        const value = e.target.value
+        const name = [e.target.name]
         setFormData({
           ...formData,
-          [e.target.name]: e.target.value
+          [name]: value
         });
       }
-    
+
+      function clearForm() {
+        setFormData({
+          title: "",
+          description: "",
+          ageRange: "",
+          img: "",
+        })
+      }
+  
       function handleSubmit(e) {
         e.preventDefault();
-    
+
         const newCartoon = {
           title: formData.title,
           description: formData.description,
           ageRange: formData.ageRange,
           img: formData.img
         }; 
+
+        // function handleError() {
+        //   if (
+        //     formData.title === "" ||
+        //     formData.description === "" ||
+        //     formData.ageRange === "" 
+        //       ) {
+        //     return  alert("Please fill first three inputs")
+        //   } else {onAddCartoon(newCartoon)}
+        // }
+  
     
         const url = `http://localhost:3001/cartoons`
         fetch( url, { 
@@ -37,7 +59,9 @@ function CartoonForm( { onAddCartoon } ) {
           body: JSON.stringify(newCartoon),
         })
           .then((r) => r.json())
-          .then(onAddCartoon);
+          .then(onAddCartoon)
+          // .then(handleError)
+          .then(clearForm)
       }
 
     return (
