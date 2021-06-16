@@ -50,7 +50,7 @@ function CartoonForm( { onAddCartoon } ) {
         // }
   
     
-        const url = `http://localhost:3001/cartoons`
+        const url = `https://p2p-json-server.herokuapp.com/cartoons`
         fetch( url, { 
           method: "POST",
           headers: {

@@ -9,7 +9,7 @@ function MainPage() {
 
     const [cartoons, setCartoons] = useState([]);
 
-    const url = `http://localhost:3001/cartoons`
+    const url = `https://p2p-json-server.herokuapp.com/cartoons`
     useEffect(() => {
         fetch(url)
           .then((r) => r.json())
